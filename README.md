@@ -21,5 +21,11 @@ Dark Mode Off             |  Dark Mode On
 :-------------------------:|:-------------------------:
 <img src="https://user-images.githubusercontent.com/32219894/165152997-cfc0044a-e897-4892-9c72-fb9add638384.png" width="200" height="400" /> | <img src="https://user-images.githubusercontent.com/32219894/165152874-d8827905-9bd0-40ae-b9f8-b86e3d969051.png" width="200" height="400" />
 
+### ToDo List
+   - Implement UI using JetPack Compose
+   - Add Detail Screen
+   - Add Navigation Component
+   - Add Locations and Episodes Support
+
 
 
