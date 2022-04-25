@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/startToUnlike"
+        app:constraintSetEnd="@+id/unlike"
+        app:constraintSetStart="@+id/start">
+
+        <OnSwipe
+            app:dragDirection="dragLeft"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/cvItem"
+            app:touchAnchorSide="left"
+            app:touchRegionId="@id/cvItem" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/cvItem"
+                app:percentY="0.1" />
+        </KeyFrameSet>
+
+    </Transition>
+
+    <Transition
+        android:id="@+id/startToLike"
+        app:constraintSetEnd="@+id/like"
+        app:constraintSetStart="@+id/start">
+
+        <OnSwipe
+            app:dragDirection="dragRight"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/cvItem"
+            app:touchAnchorSide="right"
+            app:touchRegionId="@id/cvItem" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/cvItem"
+                app:percentY="-0.1" />
+        </KeyFrameSet>
+
+    </Transition>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@+id/offScreenUnlike"
+        app:constraintSetStart="@+id/unlike"
+        app:duration="120" />
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@+id/offScreenLike"
+        app:constraintSetStart="@+id/like"
+        app:duration="120" />
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@id/cvItem">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/unlike">
+        <Constraint android:id="@id/cvItem">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="250dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.9" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/offScreenUnlike"
+        app:deriveConstraintsFrom="@id/unlike">
+
+        <Constraint android:id="@id/cvItem">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="500dp"
+                android:layout_marginBottom="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.7" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/like">
+        <Constraint android:id="@id/cvItem">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.9" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/offScreenLike"
+        app:deriveConstraintsFrom="@id/like">
+
+        <Constraint android:id="@id/cvItem">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="500dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="80dp"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.7" />
+        </Constraint>
+
+    </ConstraintSet>
+
+</MotionScene>

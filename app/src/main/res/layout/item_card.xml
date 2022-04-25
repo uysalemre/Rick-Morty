@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="character"
+            type="com.eu.swipely.repository.local.model.CharacterEntity" />
+
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvItem"
+        style="@style/Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivCharacterImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadImage="@{character.image}" />
+
+            <TextView
+                android:id="@+id/tvCharacterNameSurname"
+                style="@style/NormalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@{`Name : ` + character.name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivCharacterImage"
+                tools:text="Name and Surname" />
+
+            <TextView
+                android:id="@+id/tvLastKnownLocation"
+                style="@style/NormalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:text="@{`Location : ` + character.location}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterNameSurname"
+                tools:text="Last Known Location" />
+
+            <TextView
+                android:id="@+id/tvCharacterStatus"
+                style="@style/WidgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="@{character.status.equals(`Alive`) ? @drawable/ic_alive : character.status.equals(`Dead`) ? @drawable/ic_dead : @drawable/ic_unknown}"
+                android:text="@{character.status}"
+                app:layout_constraintEnd_toEndOf="@id/ivCharacterImage"
+                app:layout_constraintTop_toTopOf="@id/ivCharacterImage"
+                tools:text="Alive" />
+
+            <TextView
+                android:id="@+id/tvCharacterSpecies"
+                style="@style/WidgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="@{character.species}"
+                app:layout_constraintStart_toStartOf="@id/ivCharacterImage"
+                app:layout_constraintTop_toTopOf="@id/ivCharacterImage"
+                tools:text="Human" />
+
+            <TextView
+                android:id="@+id/tvCharacterGender"
+                style="@style/WidgetText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="@{character.gender}"
+                app:layout_constraintBottom_toBottomOf="@id/ivCharacterImage"
+                app:layout_constraintStart_toStartOf="@id/ivCharacterImage"
+                tools:text="Gender" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>

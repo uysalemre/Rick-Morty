@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Swipely</string>
+    <string name="err_http_internet">Please connect to Internet</string>
+    <string name="err_http_request">Services are not available now try again later</string>
+    <string name="err_http_unknown">Unknown connection issue happened</string>
+    <string name="retry">Load More</string>
+    <string name="err_retry">Do want to see more ?</string>
+</resources>
