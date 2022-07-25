@@ -29,5 +29,5 @@ Dark Mode Off             |  Dark Mode On
 <img src="https://user-images.githubusercontent.com/32219894/180696376-18643c98-77d6-47ae-8416-f97be6396d7c.png" width="200" height="400" /> | <img src="https://user-images.githubusercontent.com/32219894/180696345-33d00eae-596b-4530-b525-7865d92f0bcc.png" width="200" height="400" />
 
 
-
-
+### Important Notes
+   - The favorite characters will removed or lost, when remote mediator starts a new call because they are not persisted on server side, they are only persisted in local database.
