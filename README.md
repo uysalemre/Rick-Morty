@@ -1,4 +1,4 @@
-# Swipely-RickandMorty
+# Rick and Morty
 
 An Android fan application using Jetpack Libraries that shows data using [Rick and Morty Api](https://rickandmortyapi.com).
 This application is also an experimental try for Jetpack Paging 3 Library.
