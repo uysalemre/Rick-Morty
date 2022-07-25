@@ -98,11 +98,11 @@ fun updateFavStat(
     }
 }
 
-@BindingAdapter("searchByName")
-fun searchByName(view: SearchView, viewModel: CharacterViewModel) {
+@BindingAdapter(value = ["adapterVm", "fab"])
+fun searchByName(view: SearchView, adapterVm: CharacterViewModel, fab: FloatingActionButton) {
     view.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
         override fun onQueryTextSubmit(p0: String?): Boolean {
-            viewModel.filterPaging(p0 ?: "")
+            adapterVm.filterPaging(p0 ?: "").also { fab.visibility = View.GONE }
             return false
         }
 
