@@ -1,7 +1,7 @@
 package com.eu.swipely.di
 
 import com.eu.swipely.BuildConfig
-import com.eu.swipely.repository.remote.service.CharacterService
+import com.eu.swipely.character.repository.remote.service.CharacterService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

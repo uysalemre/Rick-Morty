@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -54,6 +55,8 @@ dependencies {
     implementation(DependencyPlugins.paging)
     implementation(DependencyPlugins.glide)
     implementation(DependencyPlugins.hilt)
+    implementation(DependencyPlugins.liveDataKtx)
+    implementation(DependencyPlugins.liveDataViewModel)
     kapt(DependencyPlugins.hiltKapt)
     implementation(DependencyPlugins.httpLoggingInterceptor)
     implementation(DependencyPlugins.materialDesign)
@@ -65,4 +68,8 @@ dependencies {
     kapt(DependencyPlugins.roomKapt)
     implementation(DependencyPlugins.roomKtx)
     testImplementation(DependencyPlugins.junit)
+    implementation(DependencyPlugins.navigationFragment)
+    implementation(DependencyPlugins.navigationKtx)
+    implementation(DependencyPlugins.hiltNavigation)
+    implementation(DependencyPlugins.dataStore)
 }

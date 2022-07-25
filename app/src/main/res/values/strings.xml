@@ -1,8 +1,12 @@
 <resources>
-    <string name="app_name">Swipely</string>
+    <string name="app_name">Rick&amp;Morty</string>
     <string name="err_http_internet">Please connect to Internet</string>
-    <string name="err_http_request">Services are not available now try again later</string>
-    <string name="err_http_unknown">Unknown connection issue happened</string>
+    <string name="err_http_request">Loading are not available now try again later</string>
+    <string name="err_http_unknown">Here is the end …</string>
     <string name="retry">Load More</string>
-    <string name="err_retry">Do want to see more ?</string>
+    <string name="retry_again">Try Again</string>
+    <string name="err_retry">There are no Characters in here …</string>
+    <string name="search_character">Search Character…</string>
+    <string name="reset_search_results">Reset search results …</string>
+    <string name="character_episodes">Episodes of character</string>
 </resources>

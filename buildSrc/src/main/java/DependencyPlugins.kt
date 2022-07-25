@@ -16,7 +16,12 @@ object DependencyPlugins {
     val roomKtx by lazy { "androidx.room:room-ktx:${Versions.room}" }
     val roomKapt by lazy { "androidx.room:room-compiler:${Versions.room}" }
     val roomPaging by lazy { "androidx.room:room-paging:${Versions.roomPaging}" }
-    val recyclerView by lazy { "androidx.recyclerview:recyclerview:${Versions.recyclerView}" }
     val paging by lazy { "androidx.paging:paging-runtime:${Versions.paging}" }
     val junit by lazy { "junit:junit:${Versions.jUnit}" }
+    val navigationFragment by lazy { "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}" }
+    val navigationKtx by lazy { "androidx.navigation:navigation-ui-ktx:${Versions.navigation}" }
+    val liveDataKtx by lazy { "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.liveData}" }
+    val liveDataViewModel by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.liveData}" }
+    val hiltNavigation by lazy { "androidx.hilt:hilt-navigation-fragment:${Versions.hiltNavigation}" }
+    val dataStore by lazy { "androidx.datastore:datastore-preferences:${Versions.dataStore}" }
 }

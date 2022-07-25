@@ -1,5 +1,4 @@
 object Versions {
-    const val gradlePlugin = "7.1.2"
     const val kotlin = "1.7.0"
     const val hilt = "2.41"
     const val architecture = "2.4.1"
@@ -12,8 +11,11 @@ object Versions {
     const val jUnit = "4.13.2"
     const val room = "2.4.2"
     const val roomPaging = "2.5.0-alpha01"
-    const val recyclerView = "1.2.1"
     const val glide = "4.12.0"
     const val paging = "3.1.1"
     const val activityKtx = "1.3.1"
+    const val navigation = "2.5.0"
+    const val liveData = "2.5.0"
+    const val hiltNavigation = "1.0.0"
+    const val dataStore = "1.0.0"
 }

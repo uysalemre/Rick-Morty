@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/fragmentCharacterList">
+
+    <fragment
+        android:id="@+id/fragmentCharacterList"
+        android:name="com.eu.swipely.character.view.FragmentCharacterList"
+        android:label="fragment_character_list"
+        tools:layout="@layout/fragment_character_list">
+        <action
+            android:id="@+id/action_fragmentCharacterList_to_fragmentCharacterDetail"
+            app:destination="@id/fragmentCharacterDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCharacterDetail"
+        android:name="com.eu.swipely.character.view.FragmentCharacterDetail"
+        android:label="fragment_character_detail"
+        tools:layout="@layout/fragment_character_detail">
+        <action
+            android:id="@+id/action_fragmentCharacterDetail_to_fragmentCharacterList"
+            app:destination="@id/fragmentCharacterList" />
+        <argument
+            android:name="characterId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+</navigation>

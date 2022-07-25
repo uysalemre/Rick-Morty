@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.eu.swipely.character.viewmodel.CharacterDetailViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/AppBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".character.view.FragmentCharacterDetail">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvItem"
+            style="@style/Card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivCharacterImage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:loadCharacterImage="@{viewModel.characterAndEpisodes}" />
+
+                <ImageView
+                    android:id="@+id/ivNameMark"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@android:drawable/ic_input_add"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivCharacterImage"
+                    app:tint="@color/red" />
+
+                <TextView
+                    android:id="@+id/tvCharacterNameSurname"
+                    style="@style/NormalText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivNameMark"
+                    app:layout_constraintEnd_toStartOf="@id/ivFavorite"
+                    app:layout_constraintStart_toEndOf="@id/ivNameMark"
+                    app:layout_constraintTop_toTopOf="@id/ivNameMark"
+                    app:setCharacterText="@{viewModel.characterAndEpisodes}"
+                    tools:text="Name and Surname" />
+
+                <ImageButton
+                    android:id="@+id/ivFavorite"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_star_fav"
+                    app:characterModel="@{viewModel.characterAndEpisodes}"
+                    app:detailViewModel="@{viewModel}"
+                    app:layout_constraintBottom_toBottomOf="@id/ivNameMark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivNameMark"
+                    app:setTintForFav="@{viewModel.characterAndEpisodes}" />
+
+                <ImageView
+                    android:id="@+id/ivLocationMark"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@android:drawable/ic_menu_mylocation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCharacterNameSurname"
+                    app:tint="@color/red" />
+
+                <TextView
+                    android:id="@+id/tvLastKnownLocation"
+                    style="@style/NormalText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivLocationMark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivLocationMark"
+                    app:layout_constraintTop_toTopOf="@id/ivLocationMark"
+                    app:setCharacterText="@{viewModel.characterAndEpisodes}"
+                    tools:text="Last Known Location" />
+
+                <TextView
+                    android:id="@+id/tvCharacterStatus"
+                    style="@style/WidgetText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/ivCharacterImage"
+                    app:layout_constraintTop_toTopOf="@id/ivCharacterImage"
+                    app:setCharacterText="@{viewModel.characterAndEpisodes}"
+                    tools:text="Alive" />
+
+                <TextView
+                    android:id="@+id/tvCharacterSpecies"
+                    style="@style/WidgetText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/ivCharacterImage"
+                    app:layout_constraintTop_toTopOf="@id/ivCharacterImage"
+                    app:setCharacterText="@{viewModel.characterAndEpisodes}"
+                    tools:text="Human" />
+
+                <TextView
+                    android:id="@+id/tvCharacterGender"
+                    style="@style/WidgetText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivCharacterImage"
+                    app:layout_constraintStart_toStartOf="@id/ivCharacterImage"
+                    app:setCharacterText="@{viewModel.characterAndEpisodes}"
+                    tools:text="Gender" />
+
+                <TextView
+                    android:id="@+id/tvEpisodesHeader"
+                    style="@style/WidgetText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/character_episodes"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastKnownLocation" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEpisodesHeader">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvEpisodes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:setSimpleRv="@{viewModel.characterAndEpisodes}"
+                        tools:listitem="@layout/item_episode" />
+
+                </androidx.core.widget.NestedScrollView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

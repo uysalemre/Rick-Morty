@@ -21,14 +21,14 @@
         <item name="android:gravity">start|center</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:padding">4dp</item>
         <item name="fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="WidgetText" parent="NormalText">
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">10sp</item>
         <item name="android:background">@drawable/ic_text_widget_background_night</item>
         <item name="android:ellipsize">end</item>
         <item name="cornerSize">8dp</item>
@@ -43,8 +43,40 @@
     <style name="ButtonRetry" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="strokeColor">@color/text_dark</item>
         <item name="android:textColor">@color/text_dark</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="textAllCaps">false</item>
         <item name="fontFamily">sans-serif-medium</item>
     </style>
+
+    <style name="SearchStyle" parent="Widget.AppCompat.SearchView">
+        <item name="colorControlActivated">@color/white</item>
+        <item name="iconifiedByDefault">false</item>
+    </style>
+
+    <style name="StickyWidgetText" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">6dp</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="FabStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/FabOverlay</item>
+        <item name="shapeAppearanceOverlay">@style/SmallComponent</item>
+    </style>
+
+    <style name="FabOverlay" parent="">
+        <item name="colorSecondary">@color/app_background_dark</item>
+        <item name="colorOnSecondary">@color/app_background_light</item>
+        <item name="colorOnSurface">@color/app_background_light</item>
+    </style>
+
+    <style name="SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">3dp</item>
+    </style>
+
 </resources>

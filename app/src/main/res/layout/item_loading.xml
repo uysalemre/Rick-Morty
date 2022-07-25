@@ -28,9 +28,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/err_http_request"
+            android:text="@{state == 3 ? @string/err_retry  : state == 1 ? @string/err_http_unknown : @string/retry}"
             android:textAlignment="center"
-            android:visibility="@{state == 1 ? View.VISIBLE : View.GONE}"
+            android:visibility="@{state != 2 ? View.VISIBLE : View.GONE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -42,8 +42,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{(view) -> onClickRetry.onClick(view)}"
-            android:text="@string/retry"
-            android:visibility="@{state == 1 ? View.VISIBLE : View.GONE}"
+            android:text="@{state == 0 ? @string/retry : @string/retry_again}"
+            android:visibility="@{(state == 0 || state == 3) ? View.VISIBLE : View.GONE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvErrorMessage" />
@@ -54,12 +54,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:indeterminateTint="@color/white"
             android:visibility="@{state == 2 ? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

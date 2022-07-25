@@ -7,8 +7,7 @@
 
         <variable
             name="character"
-            type="com.eu.swipely.repository.local.model.CharacterEntity" />
-
+            type="com.eu.swipely.character.repository.local.model.CharacterEntity" />
     </data>
 
 
@@ -17,10 +16,7 @@
         style="@style/Card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp">
+        android:layout_margin="6dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clContent"
@@ -38,30 +34,66 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:loadImage="@{character.image}" />
 
+            <ImageView
+                android:id="@+id/ivNameMark"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:src="@android:drawable/ic_input_add"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivCharacterImage"
+                app:tint="@color/red" />
+
             <TextView
                 android:id="@+id/tvCharacterNameSurname"
                 style="@style/NormalText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="@{`Name : ` + character.name}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivCharacterImage"
+                android:layout_marginEnd="4dp"
+                android:text="@{character.name}"
+                app:layout_constraintBottom_toBottomOf="@id/ivNameMark"
+                app:layout_constraintEnd_toStartOf="@id/ivFavorite"
+                app:layout_constraintStart_toEndOf="@id/ivNameMark"
+                app:layout_constraintTop_toTopOf="@id/ivNameMark"
                 tools:text="Name and Surname" />
+
+            <ImageButton
+                android:id="@+id/ivFavorite"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@{character.fav ? @color/green : @color/white}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_star_fav"
+                app:layout_constraintBottom_toBottomOf="@id/ivNameMark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivNameMark" />
+
+            <ImageView
+                android:id="@+id/ivLocationMark"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@android:drawable/ic_menu_mylocation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCharacterNameSurname"
+                app:tint="@color/red" />
 
             <TextView
                 android:id="@+id/tvLastKnownLocation"
                 style="@style/NormalText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
-                android:text="@{`Location : ` + character.location}"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="4dp"
+                android:text="@{character.location}"
+                app:layout_constraintBottom_toBottomOf="@id/ivLocationMark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvCharacterNameSurname"
+                app:layout_constraintStart_toEndOf="@id/ivLocationMark"
+                app:layout_constraintTop_toTopOf="@id/ivLocationMark"
                 tools:text="Last Known Location" />
 
             <TextView

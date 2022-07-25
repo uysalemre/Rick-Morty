@@ -16,8 +16,8 @@
 
     <!--View colors -->
     <color name="app_background_dark">#292929</color>
-    <color name="app_background_light">#DADADA</color>
-    <color name="card_background_dark">#454545</color>
+    <color name="app_background_light">#E3E2E2</color>
+    <color name="card_background_dark">#3E3E3E</color>
     <color name="card_background_light">#C5C5C5</color>
     <color name="text_dark">#C5C5C5</color>
     <color name="text_light">#252525</color>
