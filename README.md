@@ -24,7 +24,7 @@ Dark Mode Off             |  Dark Mode On
 
 <img src="https://user-images.githubusercontent.com/32219894/180696389-ab2bfe69-7a07-45c2-83bc-6b61202657bb.png" width="200" height="400" /> | <img src="https://user-images.githubusercontent.com/32219894/180696354-efde4103-6fa3-4f66-814f-279475ca6421.png" width="200" height="400" />
 
-<img src="https://user-images.githubusercontent.com/32219894/180696368-3e4aaeb5-3fe6-45ca-928e-a955aa81841d.png" width="200" height="400" /> | <img src="https://user-images.githubusercontent.com/32219894/180696378-9a2184a7-8864-4d08-99ce-1d262bb545fc.png" width="200" height="400" />
+ <img src="https://user-images.githubusercontent.com/32219894/180696378-9a2184a7-8864-4d08-99ce-1d262bb545fc.png" width="200" height="400" /> | <img src="https://user-images.githubusercontent.com/32219894/180696368-3e4aaeb5-3fe6-45ca-928e-a955aa81841d.png" width="200" height="400" /> 
 
 <img src="https://user-images.githubusercontent.com/32219894/180696376-18643c98-77d6-47ae-8416-f97be6396d7c.png" width="200" height="400" /> | <img src="https://user-images.githubusercontent.com/32219894/180696345-33d00eae-596b-4530-b525-7865d92f0bcc.png" width="200" height="400" />
 
